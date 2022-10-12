@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221012 17:25:17.310" rpa="true" schemaversion="3">
+<suite id="s1" name="Tasks" source="c:\Users\jokke\OneDrive\Tiedostot\GitHub\RPA-kurssi-Robotti\tasks.robot">
+<test id="s1-t1" name="Import car notifications data and create Excel file" line="11">
+<kw name="Open nettiauto site and allow cookies">
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>https://www.nettiauto.com/</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20221012 17:25:20.508" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20221012 17:25:20.516" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221012 17:25:22.559" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20221012 17:25:23.798" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20221012 17:25:23.799" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20221012 17:25:23.799" level="INFO">Opening url 'https://www.nettiauto.com/'</msg>
+<status status="PASS" starttime="20221012 17:25:20.500" endtime="20221012 17:25:25.787"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>id:almacmp-content--layer1</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221012 17:25:25.788" endtime="20221012 17:25:26.754"/>
+</kw>
+<kw name="Click Button" library="RPA.Browser.Selenium">
+<arg>Hyväksy</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221012 17:25:26.754" level="INFO">Clicking button 'Hyväksy'.</msg>
+<status status="PASS" starttime="20221012 17:25:26.754" endtime="20221012 17:25:27.008"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5sec</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221012 17:25:32.027" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20221012 17:25:27.013" endtime="20221012 17:25:32.027"/>
+</kw>
+<status status="PASS" starttime="20221012 17:25:20.500" endtime="20221012 17:25:32.029"/>
+</kw>
+<kw name="Fill in search field using the data in Excel">
+<kw name="Select From List By Label" library="RPA.Browser.Selenium">
+<arg>id_vehicle_type</arg>
+<arg>Henkilöauto</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20221012 17:25:32.031" level="INFO">Selecting options from selection list 'id_vehicle_type' by label Henkilöauto.</msg>
+<status status="PASS" starttime="20221012 17:25:32.031" endtime="20221012 17:25:32.168"/>
+</kw>
+<kw name="Select From List By Label" library="RPA.Browser.Selenium">
+<arg>id_make</arg>
+<arg>Audi</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20221012 17:25:32.168" level="INFO">Selecting options from selection list 'id_make' by label Audi.</msg>
+<status status="PASS" starttime="20221012 17:25:32.168" endtime="20221012 17:25:32.326"/>
+</kw>
+<kw name="Wait Until Page Contains" library="RPA.Browser.Selenium">
+<arg>id_model</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20221012 17:25:32.326" endtime="20221012 17:25:32.366"/>
+</kw>
+<kw name="Select From List By Label" library="RPA.Browser.Selenium">
+<arg>id_fuel_type</arg>
+<arg>Bensiini</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20221012 17:25:32.370" level="INFO">Selecting options from selection list 'id_fuel_type' by label Bensiini.</msg>
+<status status="PASS" starttime="20221012 17:25:32.366" endtime="20221012 17:25:32.514"/>
+</kw>
+<kw name="Select From List By Label" library="RPA.Browser.Selenium">
+<arg>id_gear_type</arg>
+<arg>Automaatti</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20221012 17:25:32.514" level="INFO">Selecting options from selection list 'id_gear_type' by label Automaatti.</msg>
+<status status="PASS" starttime="20221012 17:25:32.514" endtime="20221012 17:25:32.659"/>
+</kw>
+<kw name="Select From List By Value" library="RPA.Browser.Selenium">
+<arg>yfrom</arg>
+<arg>2011</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221012 17:25:32.662" level="INFO">Selecting options from selection list 'yfrom' by value 2011.</msg>
+<status status="PASS" starttime="20221012 17:25:32.659" endtime="20221012 17:25:32.802"/>
+</kw>
+<kw name="Select From List By Value" library="RPA.Browser.Selenium">
+<arg>yto</arg>
+<arg>2020</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221012 17:25:32.802" level="INFO">Selecting options from selection list 'yto' by value 2020.</msg>
+<status status="PASS" starttime="20221012 17:25:32.802" endtime="20221012 17:25:32.934"/>
+</kw>
+<kw name="Select From List By Label" library="RPA.Browser.Selenium">
+<arg>id_domicile</arg>
+<arg>Suomi</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20221012 17:25:32.937" level="INFO">Selecting options from selection list 'id_domicile' by label Suomi.</msg>
+<status status="PASS" starttime="20221012 17:25:32.936" endtime="20221012 17:25:33.011"/>
+</kw>
+<kw name="Submit Form" library="RPA.Browser.Selenium">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20221012 17:25:33.019" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20221012 17:25:33.011" endtime="20221012 17:25:33.275"/>
+</kw>
+<status status="PASS" starttime="20221012 17:25:32.029" endtime="20221012 17:25:33.275"/>
+</kw>
+<status status="PASS" starttime="20221012 17:25:20.500" endtime="20221012 17:25:33.275"/>
+</test>
+<doc>Import car notifications data and create Excel file</doc>
+<status status="PASS" starttime="20221012 17:25:17.327" endtime="20221012 17:25:33.281"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
