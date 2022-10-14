@@ -9,12 +9,17 @@ Library             RPA.FileSystem
 
 *** Tasks ***
 Import car notifications data and create Excel file
+    #Open Chrome Browser and allow cookies
     Open nettiauto site and allow cookies
     #Copy the Excel file from computer
     Fill in search field using the data in Excel
 
 
 *** Keywords ***
+#Open Chrome Browser and allow cookies
+    Open Available Browser    https://www.google.com/
+    Click Button    id:L2AGLb
+
 Open nettiauto site and allow cookies
     Open Available Browser    https://www.nettiauto.com/
     Wait Until Element Is Visible    id:almacmp-content--layer1
